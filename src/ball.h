@@ -5,27 +5,32 @@
 #include "vec2.h"
 #include "peg.h"
 
-static const Vec2 GRAVITY = {0, (Fix15)(0.5)};
-static const Fix15 BOUNCE = (Fix15)(0.75);
+static const Vec2 GRAVITY = {0, (Fix15)(0.75)};
+static const Fix15 BOUNCE = (Fix15)(0.4);
+
+#define BALL_RADIUS 4
 
 typedef struct {
     Vec2 position;
     Vec2 velocity;
-    Fix15 radius;
     char color;
     bool hit_peg;
 } Ball;
 
 // Wall detection
-#define hitBottom(b) ((b->position.y)>(Fix15)(380))
-#define hitTop(b) ((b->position.y)<(Fix15)(100))
-#define hitLeft(b) ((b->position.x)<(Fix15)(100))
-#define hitRight(b) ((b->position.x)>(Fix15)(540))
+#define BOTTOM (PEG_OFFSET_Y + (NUM_ROWS) * (PEG_VERTICAL_SPACING))
 
-static const Vec2 SPAWN_POINT = {(Fix15)(320), (Fix15)(120)};
+#define hitBottom(b) ((b->position.y)>(Fix15)(BOTTOM))
+#define hitTop(b) ((b->position.y)<(Fix15)(0))
+#define hitLeft(b) ((b->position.x)<(Fix15)(0))
+#define hitRight(b) ((b->position.x)>(Fix15)(640))
 
-#define NUM_BALLS 16
-static Ball balls[NUM_BALLS];
+static const Vec2 SPAWN_POINT = {(Fix15)(320), (Fix15)(40)};
+
+#define MAX_BALL_COUNT 2048
+
+int get_ball_count();
+void set_ball_count(int count);
 
 void respawn_ball(Ball* ball);
 void update_ball(Ball* ball);
@@ -33,8 +38,8 @@ void draw_ball(Ball* ball);
 void clear_ball(Ball* ball);
 
 void init_balls();
-void update_balls();
-void draw_balls();
-void clear_balls();
+void clear_update_draw_balls();
+
+
 
 #endif // BALL_H

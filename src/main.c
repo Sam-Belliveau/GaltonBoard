@@ -39,6 +39,8 @@
 #include "hardware/spi.h"
 #include "hardware/clocks.h"
 #include "hardware/pll.h"
+#include "hardware/adc.h"
+
 // Include protothreads
 #include "pt_cornell_rp2040_v1_3.h"
 
@@ -47,17 +49,9 @@
 #include "ball.h"
 #include "peg.h"
 #include "dma.h"
+#include "draw_stats.h"
 
 #define FRAME_RATE 33000
-
-
-// Draw the boundaries
-void draw_arena() {
-  drawVLine(100, 100, 280, WHITE) ;
-  drawVLine(540, 100, 280, WHITE) ;
-  drawHLine(100, 100, 440, WHITE) ;
-  drawHLine(100, 380, 440, WHITE) ;
-}
 
 // ==================================================
 // === users serial input thread
@@ -97,21 +91,27 @@ static PT_THREAD (protothread_anim(struct pt *pt))
     PT_BEGIN(pt);
 
     // Variables for maintaining frame rate
-    static int begin_time ;
+    static int frame_begin_time ;
     static int spare_time ;
-
+    const int start_time = time_us_32();
     init_balls();
     init_pegs();
 
+    Fix15 ball_count = 1;
     while(1) {
       // Measure time at start of thread
-      begin_time = time_us_32() ;      
-      draw_arena();
-      clear_balls();
-      update_balls();
-      draw_balls();
+      frame_begin_time = time_us_32();
+      Fix15 new_ball_count = adc_read();
+
+      ball_count += (new_ball_count - ball_count) >> 4;
+
+      set_ball_count(ball_count);
+      
+      draw_stats(frame_begin_time - start_time);
+      draw_histogram();
+      clear_update_draw_balls();
       draw_pegs();
-      spare_time = FRAME_RATE - (time_us_32() - begin_time) ;
+      spare_time = FRAME_RATE - (time_us_32() - frame_begin_time) ;
       // yield for necessary amount of time
       PT_YIELD_usec(spare_time) ;
      // NEVER exit while
@@ -158,9 +158,17 @@ void core1_main(){
 // === main
 // ========================================
 // USE ONLY C-sdk library
-int main(){
+int main() {
   // initialize stio
   stdio_init_all() ;
+
+  reset_counts();
+
+  adc_init();
+  // Initialize GPIO 26 (ADC0) for analog input
+  adc_gpio_init(26);
+  // Select ADC input 0 (corresponds to GP26)
+  adc_select_input(0);
 
   // initialize VGA
   initVGA() ;

@@ -6,15 +6,22 @@
 
 typedef struct {
     Vec2 position;
-    Fix15 radius;
-    char color;
     bool redraw;
 } Peg;
 
-#define NUM_ROWS 10
+
+
+#define PEG_HORIZONTAL_SPACING 32
+#define PEG_VERTICAL_SPACING 16
+
+#define PEG_OFFSET_X 320
+#define PEG_OFFSET_Y 80
+
+#define PEG_RADIUS 4
+
+#define NUM_ROWS 16
 #define NUM_PEGS ((NUM_ROWS * (NUM_ROWS + 1)) / 2)
 static Peg pegs[NUM_PEGS];
-
 
 void draw_peg(Peg* peg);
 Peg* get_nearest_peg(Vec2* position);

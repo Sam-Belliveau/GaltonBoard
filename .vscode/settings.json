@@ -40,6 +40,9 @@
         "dma.h": "c",
         "math.h": "c",
         "stdlib.h": "c",
-        "vga16_graphics.h": "c"
+        "vga16_graphics.h": "c",
+        "draw_stats.h": "c",
+        "font_rom_brl4.h": "c",
+        "spi.h": "c"
     }
 }

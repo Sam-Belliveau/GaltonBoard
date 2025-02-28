@@ -25,6 +25,9 @@ endif()
 # ====================================================================================
 set(PICO_BOARD pico CACHE STRING "Board type")
 
+# add compiler flags
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Ofast -ffixed-point")
+
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
@@ -47,18 +50,17 @@ target_sources(galton PRIVATE
   src/vec2.c
   src/vga16_graphics.c
   src/dma.c
+  src/draw_stats.c
 )
 
 
 #  ./src/ball.c ./src/dma.c ./src/main.c  ./src/peg.c ./src/vec2.c ./src/vga16_graphics.c ) 
 # pull in common dependencies
-target_link_libraries(galton PRIVATE pico_stdlib pico_divider pico_multicore pico_bootsel_via_double_reset hardware_spi hardware_pio hardware_dma hardware_adc hardware_irq hardware_clocks hardware_pll)
+target_link_libraries(galton PRIVATE pico_stdlib pico_divider pico_multicore pico_bootsel_via_double_reset hardware_spi hardware_pio hardware_dma hardware_adc hardware_irq hardware_clocks hardware_pll )
 
 if (PICO_CYW43_SUPPORTED)
     target_link_libraries(galton pico_cyw43_arch_none)
 endif()
-
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -ffixed-point")
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(galton)

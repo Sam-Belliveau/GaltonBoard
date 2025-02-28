@@ -18,8 +18,8 @@ void vec2_mul(const Vec2* a, Fix15 scalar, Vec2* result) {
 }
 
 void vec2_div(const Vec2* a, Fix15 scalar, Vec2* result) {
-    result->x = a->x / scalar;
-    result->y = a->y / scalar;
+    result->x = fast_fix_div(a->x, scalar);
+    result->y = fast_fix_div(a->y, scalar);
 }
 
 Fix15 vec2_dot(const Vec2* a, const Vec2* b) {

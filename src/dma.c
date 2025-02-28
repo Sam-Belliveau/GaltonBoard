@@ -74,6 +74,12 @@ void init_DMA() {
   
   /**GPT **/
   void start_audio() {
+    // check if DMA is not currently playing
+    if (dma_channel_is_busy(data_chan) || dma_channel_is_busy(ctrl_chan)) {
+      // DMA is already playing something; you can either return, wait, or handle this situation as needed.
+      return;
+  }
+
     dma_channel_set_read_addr(data_chan, DAC_data, true); // Reset read pointer
     dma_channel_set_trans_count(data_chan, sine_table_size, true); // Reset transfer count
     dma_channel_start(data_chan);  // Start the data channel manually
