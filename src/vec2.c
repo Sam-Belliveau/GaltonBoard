@@ -27,7 +27,7 @@ Fix15 vec2_dot(const Vec2* a, const Vec2* b) {
 }
 
 Fix15 vec2_mag(const Vec2* a) {
-    return sqrtfix(vec2_dot(a, a));
+    return fast_sqrt(vec2_dot(a, a));
 }
 
 Fix15 vec2_distance(const Vec2* a, const Vec2* b) {

@@ -103,7 +103,7 @@ static PT_THREAD (protothread_anim(struct pt *pt))
       frame_begin_time = time_us_32();
       Fix15 new_ball_count = adc_read();
 
-      ball_count += (new_ball_count - ball_count) >> 4;
+      ball_count += (new_ball_count - ball_count) >> 1;
 
       set_ball_count(ball_count);
       
