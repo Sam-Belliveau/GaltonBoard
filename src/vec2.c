@@ -13,21 +13,21 @@ void vec2_sub(const Vec2* a, const Vec2* b, Vec2* result) {
 }
 
 void vec2_mul(const Vec2* a, Fix15 scalar, Vec2* result) {
-    result->x = multfix15(a->x, scalar);
-    result->y = multfix15(a->y, scalar);
+    result->x = a->x * scalar;
+    result->y = a->y * scalar;
 }
 
 void vec2_div(const Vec2* a, Fix15 scalar, Vec2* result) {
-    result->x = divfix(a->x, scalar);
-    result->y = divfix(a->y, scalar);
+    result->x = a->x / scalar;
+    result->y = a->y / scalar;
 }
 
 Fix15 vec2_dot(const Vec2* a, const Vec2* b) {
-    return multfix15(a->x, b->x) + multfix15(a->y, b->y);
+    return a->x * b->x + a->y * b->y;
 }
 
 Fix15 vec2_mag(const Vec2* a) {
-    return sqrtfix(multfix15(a->x, a->x) + multfix15(a->y, a->y));
+    return sqrtfix(vec2_dot(a, a));
 }
 
 Fix15 vec2_distance(const Vec2* a, const Vec2* b) {

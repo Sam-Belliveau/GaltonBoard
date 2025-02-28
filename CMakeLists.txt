@@ -58,7 +58,7 @@ if (PICO_CYW43_SUPPORTED)
     target_link_libraries(galton pico_cyw43_arch_none)
 endif()
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -ffixed-point")
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(galton)

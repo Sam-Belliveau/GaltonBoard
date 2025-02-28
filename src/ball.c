@@ -15,7 +15,7 @@ void respawn_ball(Ball *ball)
 {
   ball->position = SPAWN_POINT;
   ball->velocity = random_velocity();
-  ball->radius = int2fix15(4);
+  ball->radius = (Fix15)(4);
   ball->color = 1 | (rand() & 0b1111);
 }
 
@@ -89,12 +89,12 @@ void update_ball(Ball *ball)
 
 void draw_ball(Ball *ball)
 {
-  fillCircle(fix2int15(ball->position.x), fix2int15(ball->position.y), fix2int15(ball->radius), ball->color);
+  fillCircle(ball->position.x, ball->position.y, ball->radius, ball->color);
 }
 
 void clear_ball(Ball *ball)
 {
-  fillCircle(fix2int15(ball->position.x), fix2int15(ball->position.y), fix2int15(ball->radius), BLACK);
+  fillCircle(ball->position.x, ball->position.y, ball->radius, BLACK);
 }
 
 void init_balls()
