@@ -41,19 +41,17 @@ static inline Fix15 vec2_dot(const Vec2 *a, const Vec2 *b)
 
 static inline Fix15 vec2_mag(const Vec2 *x)
 {
-    Fix15 mag = x->x * x->x + x->y * x->y;
-    return (Fix15)sqrt((float)mag);
-    // const static Fix15 a0 = 0.960433870103k;
-    // const static Fix15 b0 = 0.397824734759k;
+    const static Fix15 a0 = 0.960433870103k;
+    const static Fix15 b0 = 0.397824734759k;
 
-    // // Fast approximation of the absolute value
-    // const Fix15 a = Fix15_abs(x->x);
-    // const Fix15 b = Fix15_abs(x->y);
+    // Fast approximation of the absolute value
+    const Fix15 a = Fix15_abs(x->x);
+    const Fix15 b = Fix15_abs(x->y);
 
-    // if (a < b)
-    //     return b0 * a + a0 * b;
-    // else
-    //     return a0 * a + b0 * b;
+    if (a < b)
+        return b0 * a + a0 * b;
+    else
+        return a0 * a + b0 * b;
 }
 
 static inline Fix15 vec2_distance(const Vec2 *a, const Vec2 *b)
