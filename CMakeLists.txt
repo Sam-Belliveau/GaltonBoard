@@ -47,7 +47,6 @@ target_sources(galton PRIVATE
   src/main.c
   src/peg.c
   src/ball.c
-  src/vec2.c
   src/vga16_graphics.c
   src/dma.c
   src/draw_stats.c

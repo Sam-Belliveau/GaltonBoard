@@ -6,10 +6,7 @@
 
 typedef struct {
     Vec2 position;
-    bool redraw;
 } Peg;
-
-
 
 #define PEG_HORIZONTAL_SPACING 32
 #define PEG_VERTICAL_SPACING 16
@@ -24,7 +21,7 @@ typedef struct {
 static Peg pegs[NUM_PEGS];
 
 void draw_peg(Peg* peg);
-Peg* get_nearest_peg(Vec2* position);
+Peg* get_nearest_peg(volatile Vec2* position);
 
 void init_pegs();
 void draw_pegs();

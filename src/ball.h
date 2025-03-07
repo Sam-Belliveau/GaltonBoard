@@ -6,12 +6,13 @@
 #include "peg.h"
 
 static const Vec2 GRAVITY = {0, (Fix15)(0.75)};
-static const Fix15 BOUNCE = (Fix15)(0.4);
+extern Fix15 BOUNCE;
 
-#define BALL_RADIUS 4
+#define BALL_RADIUS 2
 
 typedef struct {
     Vec2 position;
+    Vec2 last_drawn;
     Vec2 velocity;
     char color;
     bool hit_peg;
@@ -27,7 +28,12 @@ typedef struct {
 
 static const Vec2 SPAWN_POINT = {(Fix15)(320), (Fix15)(40)};
 
-#define MAX_BALL_COUNT 2048
+#define MAX_BALL_COUNT 3600
+
+extern int previous_ball_count;
+extern int ball_count;
+
+extern Ball balls[MAX_BALL_COUNT];
 
 int get_ball_count();
 void set_ball_count(int count);
@@ -38,7 +44,8 @@ void draw_ball(Ball* ball);
 void clear_ball(Ball* ball);
 
 void init_balls();
-void clear_update_draw_balls();
+void clear_draw_balls();
+void update_balls();
 
 
 

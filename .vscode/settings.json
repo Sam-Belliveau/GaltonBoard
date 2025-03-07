@@ -43,6 +43,9 @@
         "vga16_graphics.h": "c",
         "draw_stats.h": "c",
         "font_rom_brl4.h": "c",
-        "spi.h": "c"
+        "spi.h": "c",
+        "clocks.h": "c",
+        "stdio.h": "c",
+        "multicore.h": "c"
     }
 }

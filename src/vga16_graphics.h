@@ -1,3 +1,5 @@
+#pragma once
+
 /**
  * Hunter Adams (vha3@cornell.edu)
  * modifed for 16 colors by BRL4

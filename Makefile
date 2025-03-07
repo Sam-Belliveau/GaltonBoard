@@ -1580,6 +1580,30 @@ src/dma.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/dma.c.s
 .PHONY : src/dma.c.s
 
+src/draw_stats.o: src/draw_stats.c.o
+.PHONY : src/draw_stats.o
+
+# target to build an object file
+src/draw_stats.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/draw_stats.c.o
+.PHONY : src/draw_stats.c.o
+
+src/draw_stats.i: src/draw_stats.c.i
+.PHONY : src/draw_stats.i
+
+# target to preprocess a source file
+src/draw_stats.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/draw_stats.c.i
+.PHONY : src/draw_stats.c.i
+
+src/draw_stats.s: src/draw_stats.c.s
+.PHONY : src/draw_stats.s
+
+# target to generate assembly for a file
+src/draw_stats.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/draw_stats.c.s
+.PHONY : src/draw_stats.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -1627,30 +1651,6 @@ src/peg.s: src/peg.c.s
 src/peg.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/peg.c.s
 .PHONY : src/peg.c.s
-
-src/vec2.o: src/vec2.c.o
-.PHONY : src/vec2.o
-
-# target to build an object file
-src/vec2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/vec2.c.o
-.PHONY : src/vec2.c.o
-
-src/vec2.i: src/vec2.c.i
-.PHONY : src/vec2.i
-
-# target to preprocess a source file
-src/vec2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/vec2.c.i
-.PHONY : src/vec2.c.i
-
-src/vec2.s: src/vec2.c.s
-.PHONY : src/vec2.s
-
-# target to generate assembly for a file
-src/vec2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/galton.dir/build.make CMakeFiles/galton.dir/src/vec2.c.s
-.PHONY : src/vec2.c.s
 
 src/vga16_graphics.o: src/vga16_graphics.c.o
 .PHONY : src/vga16_graphics.o
@@ -1862,15 +1862,15 @@ help:
 	@echo "... src/dma.o"
 	@echo "... src/dma.i"
 	@echo "... src/dma.s"
+	@echo "... src/draw_stats.o"
+	@echo "... src/draw_stats.i"
+	@echo "... src/draw_stats.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/peg.o"
 	@echo "... src/peg.i"
 	@echo "... src/peg.s"
-	@echo "... src/vec2.o"
-	@echo "... src/vec2.i"
-	@echo "... src/vec2.s"
 	@echo "... src/vga16_graphics.o"
 	@echo "... src/vga16_graphics.i"
 	@echo "... src/vga16_graphics.s"

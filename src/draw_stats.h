@@ -10,14 +10,14 @@
 
 #define NUM_BINS (NUM_ROWS + 1)
 
-static int TOTAL_COUNT = 0;
-static int time_since_start = 0;
+extern int TOTAL_COUNT;
+extern int time_since_start;
 
-static int MAX_COUNT = 0;
-static int COUNTS[NUM_BINS];
+extern int MAX_COUNT;
+extern int COUNTS[NUM_BINS];
 
-static int PREVIOUS_MAX = 1;
-static int PREVIOUS_COUNTS[NUM_BINS];
+extern int PREVIOUS_MAX;
+extern int PREVIOUS_COUNTS[NUM_BINS];
 
 #define BIN_WIDTH (((Fix15)640) / NUM_BINS)
 
@@ -26,7 +26,7 @@ void reset_counts();
 int get_bin(Fix15 x_position);
 void count_ball(int bin);
 
-void draw_stats(uint32_t time_since_boot_us);
+void draw_stats(int32_t time_since_boot_us, int32_t physics_us, int32_t draw_us, int state);
 void draw_histogram();
 
 #endif // DRAW_STATS

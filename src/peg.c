@@ -3,30 +3,27 @@
 
 void draw_peg(Peg *peg)
 {
-    if (peg->redraw)
-    {
-        fillCircle(peg->position.x, peg->position.y, PEG_RADIUS, WHITE);
-    }
+    drawCircle(peg->position.x, peg->position.y, PEG_RADIUS, WHITE);
 }
 
-Peg *get_nearest_peg(Vec2 *position)
+Peg *get_nearest_peg(volatile Vec2 *position)
 {
     static Peg nearest_peg;
 
-    int row = ((position->y) - PEG_OFFSET_Y + (PEG_VERTICAL_SPACING / 2)) / PEG_VERTICAL_SPACING;
+    int row = ((position->y) - PEG_OFFSET_Y + (PEG_VERTICAL_SPACING >> 1)) >> 4;
 
     if (row < 0) row = 0;
     if (row >= NUM_ROWS) row = NUM_ROWS - 1;
 
     Fix15 start_x = PEG_OFFSET_X - (PEG_HORIZONTAL_SPACING * row >> 1);
-    int column = ((position->x) - (start_x) + (PEG_HORIZONTAL_SPACING / 2)) / PEG_HORIZONTAL_SPACING;
+    int column = ((position->x) - (start_x) + (PEG_HORIZONTAL_SPACING >> 1)) >> 5;
 
     if (column < 0) column = 0;
     if (column > row) column = row;
 
     // Compute peg index based on row/column
-    nearest_peg.position.x = start_x + (PEG_HORIZONTAL_SPACING * column);
-    nearest_peg.position.y = PEG_OFFSET_Y + (PEG_VERTICAL_SPACING * row);
+    nearest_peg.position.x = start_x + (column << 5);
+    nearest_peg.position.y = PEG_OFFSET_Y + (row << 4);
 
     return &nearest_peg;
 }
@@ -44,7 +41,6 @@ void init_pegs()
         {
             pegs[peg].position.x = start_x + (PEG_HORIZONTAL_SPACING * column);
             pegs[peg].position.y = start_y;
-            pegs[peg].redraw = true;
             peg++;
         }
     }

@@ -114,24 +114,10 @@ CMakeFiles/galton.dir/src/ball.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/galton.dir/src/ball.c.s"
 	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/ball.c" -o CMakeFiles/galton.dir/src/ball.c.s
 
-CMakeFiles/galton.dir/src/vec2.c.o: CMakeFiles/galton.dir/flags.make
-CMakeFiles/galton.dir/src/vec2.c.o: src/vec2.c
-CMakeFiles/galton.dir/src/vec2.c.o: CMakeFiles/galton.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/galton.dir/src/vec2.c.o"
-	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/galton.dir/src/vec2.c.o -MF CMakeFiles/galton.dir/src/vec2.c.o.d -o CMakeFiles/galton.dir/src/vec2.c.o -c "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/vec2.c"
-
-CMakeFiles/galton.dir/src/vec2.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/galton.dir/src/vec2.c.i"
-	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/vec2.c" > CMakeFiles/galton.dir/src/vec2.c.i
-
-CMakeFiles/galton.dir/src/vec2.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/galton.dir/src/vec2.c.s"
-	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/vec2.c" -o CMakeFiles/galton.dir/src/vec2.c.s
-
 CMakeFiles/galton.dir/src/vga16_graphics.c.o: CMakeFiles/galton.dir/flags.make
 CMakeFiles/galton.dir/src/vga16_graphics.c.o: src/vga16_graphics.c
 CMakeFiles/galton.dir/src/vga16_graphics.c.o: CMakeFiles/galton.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/galton.dir/src/vga16_graphics.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/galton.dir/src/vga16_graphics.c.o"
 	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/galton.dir/src/vga16_graphics.c.o -MF CMakeFiles/galton.dir/src/vga16_graphics.c.o.d -o CMakeFiles/galton.dir/src/vga16_graphics.c.o -c "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/vga16_graphics.c"
 
 CMakeFiles/galton.dir/src/vga16_graphics.c.i: cmake_force
@@ -145,7 +131,7 @@ CMakeFiles/galton.dir/src/vga16_graphics.c.s: cmake_force
 CMakeFiles/galton.dir/src/dma.c.o: CMakeFiles/galton.dir/flags.make
 CMakeFiles/galton.dir/src/dma.c.o: src/dma.c
 CMakeFiles/galton.dir/src/dma.c.o: CMakeFiles/galton.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/galton.dir/src/dma.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/galton.dir/src/dma.c.o"
 	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/galton.dir/src/dma.c.o -MF CMakeFiles/galton.dir/src/dma.c.o.d -o CMakeFiles/galton.dir/src/dma.c.o -c "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/dma.c"
 
 CMakeFiles/galton.dir/src/dma.c.i: cmake_force
@@ -155,6 +141,20 @@ CMakeFiles/galton.dir/src/dma.c.i: cmake_force
 CMakeFiles/galton.dir/src/dma.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/galton.dir/src/dma.c.s"
 	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/dma.c" -o CMakeFiles/galton.dir/src/dma.c.s
+
+CMakeFiles/galton.dir/src/draw_stats.c.o: CMakeFiles/galton.dir/flags.make
+CMakeFiles/galton.dir/src/draw_stats.c.o: src/draw_stats.c
+CMakeFiles/galton.dir/src/draw_stats.c.o: CMakeFiles/galton.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/galton.dir/src/draw_stats.c.o"
+	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/galton.dir/src/draw_stats.c.o -MF CMakeFiles/galton.dir/src/draw_stats.c.o.d -o CMakeFiles/galton.dir/src/draw_stats.c.o -c "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/draw_stats.c"
+
+CMakeFiles/galton.dir/src/draw_stats.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/galton.dir/src/draw_stats.c.i"
+	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/draw_stats.c" > CMakeFiles/galton.dir/src/draw_stats.c.i
+
+CMakeFiles/galton.dir/src/draw_stats.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/galton.dir/src/draw_stats.c.s"
+	/Users/samb/.pico-sdk/toolchain/13_3_Rel1/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/draw_stats.c" -o CMakeFiles/galton.dir/src/draw_stats.c.s
 
 CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c.o: CMakeFiles/galton.dir/flags.make
 CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c.o: /Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c
@@ -1018,9 +1018,9 @@ galton_OBJECTS = \
 "CMakeFiles/galton.dir/src/main.c.o" \
 "CMakeFiles/galton.dir/src/peg.c.o" \
 "CMakeFiles/galton.dir/src/ball.c.o" \
-"CMakeFiles/galton.dir/src/vec2.c.o" \
 "CMakeFiles/galton.dir/src/vga16_graphics.c.o" \
 "CMakeFiles/galton.dir/src/dma.c.o" \
+"CMakeFiles/galton.dir/src/draw_stats.c.o" \
 "CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c.o" \
 "CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/hardware_gpio/gpio.c.o" \
 "CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2040/pico_platform/platform.c.o" \
@@ -1090,9 +1090,9 @@ galton_EXTERNAL_OBJECTS =
 galton.elf: CMakeFiles/galton.dir/src/main.c.o
 galton.elf: CMakeFiles/galton.dir/src/peg.c.o
 galton.elf: CMakeFiles/galton.dir/src/ball.c.o
-galton.elf: CMakeFiles/galton.dir/src/vec2.c.o
 galton.elf: CMakeFiles/galton.dir/src/vga16_graphics.c.o
 galton.elf: CMakeFiles/galton.dir/src/dma.c.o
+galton.elf: CMakeFiles/galton.dir/src/draw_stats.c.o
 galton.elf: CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c.o
 galton.elf: CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/hardware_gpio/gpio.c.o
 galton.elf: CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2040/pico_platform/platform.c.o

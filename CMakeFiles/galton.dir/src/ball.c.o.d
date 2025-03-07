@@ -82,6 +82,7 @@ CMakeFiles/galton.dir/src/ball.c.o: \
  /Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/hardware_spi/include/hardware/spi.h \
  /Users/samb/.pico-sdk/sdk/2.1.0/src/rp2040/hardware_structs/include/hardware/structs/spi.h \
  /Users/samb/.pico-sdk/sdk/2.1.0/src/rp2040/hardware_regs/include/hardware/regs/spi.h \
+ /Users/samb/Programming/ECE4760/Lab\ 2/GaltonBoard/src/draw_stats.h \
  /Users/samb/Programming/ECE4760/Lab\ 2/GaltonBoard/src/vga16_graphics.h \
  /Users/samb/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/include/stdlib.h \
  /Users/samb/.pico-sdk/toolchain/13_3_Rel1/arm-none-eabi/include/machine/stdlib.h \

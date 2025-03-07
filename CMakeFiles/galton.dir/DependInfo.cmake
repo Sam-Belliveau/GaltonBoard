@@ -195,9 +195,9 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c.o" "gcc" "CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_stdlib/stdlib.c.o.d"
   "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/ball.c" "CMakeFiles/galton.dir/src/ball.c.o" "gcc" "CMakeFiles/galton.dir/src/ball.c.o.d"
   "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/dma.c" "CMakeFiles/galton.dir/src/dma.c.o" "gcc" "CMakeFiles/galton.dir/src/dma.c.o.d"
+  "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/draw_stats.c" "CMakeFiles/galton.dir/src/draw_stats.c.o" "gcc" "CMakeFiles/galton.dir/src/draw_stats.c.o.d"
   "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/main.c" "CMakeFiles/galton.dir/src/main.c.o" "gcc" "CMakeFiles/galton.dir/src/main.c.o.d"
   "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/peg.c" "CMakeFiles/galton.dir/src/peg.c.o" "gcc" "CMakeFiles/galton.dir/src/peg.c.o.d"
-  "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/vec2.c" "CMakeFiles/galton.dir/src/vec2.c.o" "gcc" "CMakeFiles/galton.dir/src/vec2.c.o.d"
   "/Users/samb/Programming/ECE4760/Lab 2/GaltonBoard/src/vga16_graphics.c" "CMakeFiles/galton.dir/src/vga16_graphics.c.o" "gcc" "CMakeFiles/galton.dir/src/vga16_graphics.c.o.d"
   "/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_cxx_options/new_delete.cpp" "CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_cxx_options/new_delete.cpp.o" "gcc" "CMakeFiles/galton.dir/Users/samb/.pico-sdk/sdk/2.1.0/src/rp2_common/pico_cxx_options/new_delete.cpp.o.d"
   )

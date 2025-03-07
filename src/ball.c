@@ -5,20 +5,21 @@
 
 #include <stdlib.h>
 
-static int previous_ball_count = 0;
-static int ball_count = 16;
+int previous_ball_count = 0;
+int ball_count = 16;
+Ball balls[MAX_BALL_COUNT];
 
-static Ball balls[MAX_BALL_COUNT];
+Fix15 BOUNCE = (Fix15)(0.4);
 
 static Vec2 random_velocity()
 {
   return (Vec2){
       (Fix15)((rand() & 0x7fff) - 0x3fff) >> 15,
-      (Fix15)((rand() & 0x7fff) - 0x3fff) >> 15
-    };
+      (Fix15)((rand() & 0x7fff) - 0x3fff) >> 15};
 }
 
-int get_ball_count() {
+int get_ball_count()
+{
   return ball_count;
 }
 
@@ -41,19 +42,16 @@ void respawn_ball(Ball *ball)
 
 void update_ball(Ball *ball)
 {
-  Peg *nearest_peg = get_nearest_peg(&ball->position);
+  const Peg *nearest_peg = get_nearest_peg(&ball->position);
 
   Vec2 difference;
   vec2_sub(&ball->position, &nearest_peg->position, &difference);
 
-  Fix15 collision_distance = BALL_RADIUS + PEG_RADIUS;
-
-  if (abs(difference.x) < collision_distance && abs(difference.y) < collision_distance)
+  const Fix15 collision_distance = BALL_RADIUS + PEG_RADIUS;
+  Fix15 distance = vec2_mag(&difference);
+  
+  if (distance <= collision_distance)
   {
-    nearest_peg->redraw = true;
-
-    Fix15 distance = vec2_mag(&difference);
-
     Vec2 normal;
     vec2_div(&difference, distance, &normal);
 
@@ -112,12 +110,13 @@ void update_ball(Ball *ball)
 
 void draw_ball(Ball *ball)
 {
-  fillCircle(ball->position.x, ball->position.y, BALL_RADIUS, ball->color);
+  drawCircle(ball->position.x, ball->position.y, BALL_RADIUS, ball->color);
+  ball->last_drawn = ball->position;
 }
 
 void clear_ball(Ball *ball)
 {
-  fillCircle(ball->position.x, ball->position.y, BALL_RADIUS, BLACK);
+  drawCircle(ball->last_drawn.x, ball->last_drawn.y, BALL_RADIUS, BLACK);
 }
 
 void init_balls()
@@ -128,26 +127,37 @@ void init_balls()
   }
 }
 
-void clear_update_draw_balls()
+void clear_draw_balls()
 {
   for (int i = 0; i < ball_count; i++)
   {
     clear_ball(&balls[i]);
-    update_ball(&balls[i]);
     draw_ball(&balls[i]);
   }
 
-  if (ball_count < previous_ball_count) {
-    for (int i = ball_count; i < previous_ball_count; i++) {
+  if (ball_count < previous_ball_count)
+  {
+    for (int i = ball_count; i < previous_ball_count; i++)
+    {
       clear_ball(&balls[i]);
     }
   }
-  else if (ball_count > previous_ball_count) {
-    for (int i = previous_ball_count; i < ball_count; i++) {
+  else if (ball_count > previous_ball_count)
+  {
+    for (int i = previous_ball_count; i < ball_count; i++)
+    {
       clear_ball(&balls[i]);
       respawn_ball(&balls[i]);
     }
   }
 
   previous_ball_count = ball_count;
+}
+
+void update_balls()
+{
+  for (int i = 0; i < ball_count; i++)
+  {
+    update_ball(&balls[i]);
+  }
 }
