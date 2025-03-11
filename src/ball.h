@@ -10,8 +10,10 @@ extern Fix15 BOUNCE;
 
 #define BALL_RADIUS 2
 
+//Struct for all balls
+//Positions all stored as x,y form in Vec2 type
 typedef struct {
-    Vec2 position;
+    Vec2 position; 
     Vec2 last_drawn;
     Vec2 velocity;
     char color;
@@ -26,6 +28,7 @@ typedef struct {
 #define hitLeft(b) ((b->position.x)<(Fix15)(0))
 #define hitRight(b) ((b->position.x)>(Fix15)(640))
 
+// Coordinate from where to create and drop balls
 static const Vec2 SPAWN_POINT = {(Fix15)(320), (Fix15)(40)};
 
 #define MAX_BALL_COUNT 3600
@@ -35,15 +38,17 @@ extern int ball_count;
 
 extern Ball balls[MAX_BALL_COUNT];
 
-int get_ball_count();
-void set_ball_count(int count);
+int get_ball_count(); // Get ball_count being currently simulated 
+void set_ball_count(int count); //Set ball_count
 
-void respawn_ball(Ball* ball);
+//Individual Ball Functions 
+void respawn_ball(Ball* ball); 
 void update_ball(Ball* ball);
 void draw_ball(Ball* ball);
 void clear_ball(Ball* ball);
 
-void init_balls();
+//By frame functions for all balls
+void init_balls(); 
 void clear_draw_balls();
 void update_balls();
 
