@@ -33,9 +33,11 @@ static const Vec2 SPAWN_POINT = {(Fix15)(320), (Fix15)(40)};
 
 #define MAX_BALL_COUNT 3600
 
+//Count variables needed for stats display
 extern int previous_ball_count;
 extern int ball_count;
 
+//Global Ball array
 extern Ball balls[MAX_BALL_COUNT];
 
 int get_ball_count(); // Get ball_count being currently simulated 

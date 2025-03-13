@@ -76,7 +76,7 @@ static PT_THREAD(protothread_anim(struct pt *pt))
 
   static int state;
 
-  init_balls();
+  init_balls(); 
   init_pegs();
 
   tma_init(&ball_count_tma);
@@ -92,7 +92,7 @@ static PT_THREAD(protothread_anim(struct pt *pt))
 
     tma_add(&ball_count_tma, adc_read());
 
-    const int new_ball_count = tma_get(&ball_count_tma);
+    const int new_ball_count = tma_get(&ball_count_tma); //Get avged ball count
 
     int next = gpio_get(15);
 
